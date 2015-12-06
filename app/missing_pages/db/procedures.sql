@@ -4,7 +4,7 @@ CREATE TYPE t_missing_page AS (
     lost_pages integer[]
 );
 
-CREATE OR REPLACE FUNCTION get_missing_pages(test_id_in int, version_name_in varchar DEFAULT NULL)
+CREATE FUNCTION get_missing_pages(test_id_in int, version_name_in varchar DEFAULT NULL)
 RETURNS SETOF t_missing_page AS $$
 
     SELECT s_name, v_name, miss_pages_arr
