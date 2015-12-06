@@ -13,6 +13,7 @@ docker exec test-app pip install -r requirements.txt
 # Make tables and load a superuser for Admin site.
 docker exec test-app python manage.py migrate
 docker exec test-app python manage.py loaddata superuser.json
+docker exec test-app python manage.py loaddata test_missing_pages.json
 
 # Start python server in background.
 # Admin site will be available at http://localhost:8000/admin/
